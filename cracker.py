@@ -90,9 +90,9 @@ class Pwd_dict:
         print("1/4 done")
         year = self.add_years(word_collection)
         print("2/4 done")
-       # year_over_sym = self.add_years(sym)
+        year_over_sym = self.add_years(sym)
         print("3/4 done")
-        #sym_over_year = self.add_symbols(year)
+        sym_over_year = self.add_symbols(year)
         print("4/4 done")
 
         word_with_years_symbol = sym + year #+ year_over_sym + sym_over_year
