@@ -38,7 +38,6 @@ class Crack_pwd:
                 print(str(hashes).replace('\n', '') + "is same as than :" + str(hash_to_test))
                 return(1)
             else:
-                #print(str(hashes) + "is different than :" + str(hash_to_test))
                 return(0)
 
     def add_result(self, word, sha):
@@ -53,7 +52,6 @@ class Pwd_dict:
 
     def __init__(self, wordlist, hasheslist):
         self.word_list = self.get_wordlist(wordlist)
-        #words_collection = []
         size = len(self.word_list)
         pwd_cracker = Crack_pwd(hasheslist)
         #size = 327
@@ -63,7 +61,7 @@ class Pwd_dict:
             print("Working on word: " + str(k) + " over " + str(size))
             tmp_words_collection = []
             tmp_words_collection += self.get_all_cases_possibilities(self.word_list[k])
-            #tmp_words_collection += self.get_all_duo_combination(k)
+            tmp_words_collection += self.get_all_duo_combination(k)
             tmp_words_collection += self.add_year_and_symbols(tmp_words_collection)
             print("Trying to find the Hash -> ")
             pwd_cracker.find_common_hash(tmp_words_collection)
